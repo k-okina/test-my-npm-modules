@@ -1,28 +1,21 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    HelloWorldContainer開始
+    <HelloWorldContainer />
+    HelloWorldContainer終了
   </div>
 </template>
 
 <script>
+import connect from "vue-connect";
 import HelloWorld from "./components/HelloWorld.vue";
+
+const HelloWorldContainer = connect({ msg: "helloworld" })(HelloWorld);
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    HelloWorldContainer
   }
 };
 </script>
-
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
